@@ -4,7 +4,7 @@ $books = [];
 
 $total = 100;
 
-$replace = rand(0, $total);
+$replace = rand(1, $total);
 
 for ($i=1; $i<=$total; $i++) {
     
