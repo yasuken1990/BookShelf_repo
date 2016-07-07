@@ -1,5 +1,9 @@
 <?php
 
+require_once('./Book.php');
+require_once('./BookShelf.php');
+require_once('./Faker.php');
+
 $books = [];
 
 $total = 100;
