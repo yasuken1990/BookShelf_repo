@@ -29,7 +29,26 @@ class BookShelf
      */
     public function search($conditions)
     {
-        
+        $hits = [];
+        foreach ($this->books as $book) {
+            if (isset($conditions['isbn'])) {
+                if ($conditions['isbn'] === $book->getIsbn()) {
+                    $hits[] = $book; 
+                }
+            }
+
+            if (isset($conditions['title'])) {
+                if (strpos($book->getTitle(), $conditions['title']) !== false) {
+                   $hits[] = $book;
+                }
+            }
+            if (isset($conditions['author'])) {
+                if (strpos($book->getAuthor(), $conditions['author']) !== false) {
+                    $hits[] = $book;
+                }
+            }
+        }
+        return $hits;
     }
 
 }
